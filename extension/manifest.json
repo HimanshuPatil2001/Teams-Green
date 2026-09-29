@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Teams Stay Green Connector",
+  "version": "1.1.0",
+  "description": "Bypasses Azure Entra App registration by securely sync'ing your active Teams browser session with your keep-alive backend.",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "tabs",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*.teams.microsoft.com/*",
+    "https://*.presence.teams.microsoft.com/*",
+    "https://graph.microsoft.com/*",
+    "https://greenteam.himanshupatil.in/*",
+    "https://teams.live.com/*",
+    "https://teams.cloud.microsoft/*",
+    "https://authsvc.teams.microsoft.com/*",
+    "https://login.microsoftonline.com/*",
+    "https://localhost/*",
+    "http://localhost/*"
+  ],
+  "content_scripts": [
+    {
+      "js": [ "capture-msal-key.js" ],
+      "matches": [ "https://teams.cloud.microsoft/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

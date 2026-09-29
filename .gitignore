@@ -1,0 +1,22 @@
+################################################################################
+# Visual Studio & .NET Build Artifacts
+################################################################################
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+################################################################################
+# Sensitive & Local Configuration Files
+################################################################################
+appsettings.Development.json
+appsettings.*.local.json
+*.local.secrets.backup
+*.bak
+
+# Operating System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+@TeamsGreen_HostAddress = http://localhost:5083
+
+GET {{TeamsGreen_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

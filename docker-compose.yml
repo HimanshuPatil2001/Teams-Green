@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  greenteams:
+    image: himanshupatil591/greenteams:latest
+    container_name: greenteams-app
+    pull_policy: always
+    restart: always
+    ports:
+      - "8091:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=tcp:YOUR_DB_IP,1433;Database=TeamsKeepAliveDb;User Id=sa;Password=YOUR_PASSWORD;TrustServerCertificate=True;
